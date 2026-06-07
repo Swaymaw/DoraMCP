@@ -1,0 +1,30 @@
+use_default_settings: true
+
+general:
+  debug: false
+  instance_name: "SearXNG"
+
+server:
+  secret_key: "admin"
+  limiter: false
+  image_proxy: true
+  port: 8080
+  bind_address: "0.0.0.0"
+
+redis:
+  url: redis://redis:6379/0
+
+search:
+  safe_search: 0
+  autocomplete: ""
+  default_lang: "en"
+  formats:
+    - html
+    - json
+
+outgoing:
+  request_timeout: 6.0
+  max_request_timeout: 15.0
+  pool_connections: 100
+  pool_maxsize: 20
+  enable_http2: true
