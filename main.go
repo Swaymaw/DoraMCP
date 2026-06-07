@@ -2,6 +2,7 @@ package main
 
 import (
 	"context"
+	"fmt"
 	"net/http"
 
 	"github.com/Swaymaw/DoraMCP/logger"
@@ -23,7 +24,7 @@ func main() {
 
 	logger.Log.Info("Starting MCP server on :8080...")
 	if err := http.ListenAndServe(":8080", mux); err != nil {
-		logger.Log.Error("Server error: %v", err)
+		logger.Log.Error(fmt.Sprintf("Server error: %v", err))
 	}
 	_ = context.Background()
 }

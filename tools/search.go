@@ -39,7 +39,7 @@ func searxNGSearch(query string, max_count int) (searchOutput, error) {
 	resp, err := http.Get(endpoint)
 
 	if err != nil {
-		logger.Log.Error(fmt.Sprintf("Cannot connect to DDG API -", err))
+		logger.Log.Error(fmt.Sprintf("Cannot connect to DDG API - %v", err))
 		return searchOutput{}, err
 	}
 	defer resp.Body.Close()
