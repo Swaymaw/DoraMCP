@@ -12,6 +12,8 @@ import (
 func main() {
 	server := mcp.NewServer(&mcp.Implementation{Name: "dora-web-explorer", Version: "1.0.0"}, nil)
 	mcp.AddTool(server, tools.WebSearchTool, tools.WebSearchHandler)
+	mcp.AddTool(server, &tools.FetchTool, tools.FetchHandler)
+
 	handler := mcp.NewStreamableHTTPHandler(func(r *http.Request) *mcp.Server {
 		return server
 	}, nil)
